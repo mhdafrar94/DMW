@@ -1,0 +1,213 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and General Layout */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding-top: 80px; /* Adjust this based on the height of your navbar */
+}
+
+/* Navbar Section */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Make sure navbar stays on top of other content */
+    background-color: #2c3e50;
+    padding: 15px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar .logo h1 {
+    color: #ecf0f1;
+    font-size: 24px;
+}
+
+.navbar .logo span {
+    color: #e67e22;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ecf0f1;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #e67e22;
+}
+
+/* Hero Section */
+.hero {
+    background: url('https://via.placeholder.com/1920x600') no-repeat center center/cover;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+}
+
+/* Home Content */
+.home-content {
+    display: none; /* Initially hidden */
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+/* Reservation Section */
+.reservation {
+    padding: 50px 20px;
+    background-color: #ecf0f1;
+}
+
+/* Styling the forms to be centered and limited in width */
+.reservation form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reservation h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #2c3e50;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button.submit-btn {
+    background-color: #e67e22;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button.submit-btn:hover {
+    background-color: #d35400;
+}
+
+/* Footer Section */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px 0;
+    position: absolute;
+    width: 100%;
+    bottom: -30;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+	flex-wrap: wrap;
+}
+
+.footer-content p {
+    margin: 0;
+    font-size: 14px;
+}
+.social-links {
+    display: flex;
+    gap: 10px;
+}
+.social-links a {
+     color: #ecf0f1;
+     font-size: 14px;
+     text-decoration: none;
+}
+.social-links a:hover {
+      color: #e67e22;
+}
+.footer-email {
+	margin-top: 10px;
+	font-size: 16px;
+}
+ .footer-email a {
+	color: #e67e22;
+	text-decoration: none;
+}
+
+/* Style for phone numbers in the contact section */
+#contact-info a {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contact-info a:hover {
+    color: #d35400;
+}
+#footer-content a {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: bold;
+	
+}

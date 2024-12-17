@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Reservation</title>
+    <link rel="stylesheet" href="C:\Users\AFRAR NIBM\Desktop\DMW PEOJECT\CSS\styles.css">
+    
+</head>
+<body>
+    <!-- Navbar Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="#home">
+                    <h1>Hotel <span>Deluxe</span></h1>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home" class="home-btn">Home</a></li>
+                    <li><a href="#rooms">Rooms</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#" id="contact-btn" class="contact-btn">Contact</a></li>
+                    <li><a href="#" id="register-btn" class="register-btn">Register</a></li>
+                    <li><a href="#" id="signin-btn" class="signin-btn">Sign In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Welcome to Hotel Deluxe</h2>
+            <p>Your comfort is our priority. Book your stay with us today!</p>
+        </div>
+        <div class="home-content" id="home-content">
+            <p>Hotel Deluxe offers a range of luxurious rooms and services. From modern amenities to beautiful views, we ensure that your stay is comfortable and memorable. Enjoy delicious cuisine, relax by the pool, or explore the local attractions during your visit.</p>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section id="contact-info">
+        <h2>Contact Us</h2>
+        <p>Hotel Email: <a href="mailto:hoteldelux@gmail.com">hoteldelux@gmail.com</a></p>
+        <p>Phone Numbers:</p>
+        <ul>
+            <li><a href="tel:+943798765432">+94 3798765432</a></li>
+            <li><a href="tel:+943798765431">+94 3798765431</a></li>
+        </ul>
+    </section>
+
+    <!-- Register Form Section -->
+    <section class="reservation" id="register-form">
+        <h2>Register</h2>
+        <form id="registerForm" action="#" method="POST">
+            <div class="form-group">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="form-group">
+                <label for="id-type">ID Type:</label>
+                <select id="id-type" name="idType" required>
+                    <option value="passport">Passport</option>
+                    <option value="nic">NIC</option>
+                    <option value="driving-license">Driving License</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="id-number">ID Number:</label>
+                <input type="text" id="id-number" name="idNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <button type="submit" class="submit-btn">Register</button>
+        </form>
+        <div id="age-error" style="color: red; display: none; text-align: center;">You must be 18 or older to register.</div>
+    </section>
+
+    <!-- Sign In Form Section -->
+    <section class="reservation" id="signin-form">
+        <h2>Sign In</h2>
+        <form action="#" method="POST">
+            <div class="form-group">
+                <label for="signin-email">Email:</label>
+                <input type="email" id="signin-email" name="signinEmail" required>
+            </div>
+            <div class="form-group">
+                <label for="signin-password">Password:</label>
+                <input type="password" id="signin-password" name="signinPassword" required>
+            </div>
+            <button type="submit" class="submit-btn">Sign In</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Hotel Deluxe. All Rights Reserved.</p>
+            <p>Contact us via email: <a href="mailto:hoteldelux@gmail.com">hoteldelux@gmail.com</a></p>
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://wa.me/yourwhatsappnumber" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.instagram.com/yourusername" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="viber://chat?number=yourvibernumber" target="_blank">
+                    <i class="fab fa-viber"></i>
+                </a>
+                <a href="https://www.facebook.com/yourfacebookprofile" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/channel/youryoutubechannel" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FontAwesome for social media icons (optional) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+    <script>
+        // Age verification function
+        function isAdult(birthDate) {
+            const today = new Date();
+            const birthDateObj = new Date(birthDate);
+            const age = today.getFullYear() - birthDateObj.getFullYear();
+            const month = today.getMonth() - birthDateObj.getMonth();
+            
+            // If the user hasn't had their birthday this year yet, subtract 1 from the age
+            if (month < 0 || (month === 0 && today.getDate() < birthDateObj.getDate())) {
+                return age - 1;
+            }
+            return age;
+        }
+
+        // Handle form submission
+        const registerForm = document.getElementById("registerForm");
+        registerForm.addEventListener("submit", function(event) {
+            const dob = document.getElementById("dob").value;
+            const age = isAdult(dob);
+
+            // Check if the user is under 18
+            if (age < 18) {
+                // Prevent form submission
+                event.preventDefault();
+                
+                // Show error message
+                document.getElementById("age-error").style.display = "block";
+            }
+        });
+
+        // Show Register Form when Register button is clicked
+        document.getElementById('register-btn').addEventListener('click', () => {
+            document.getElementById('register-form').style.display = 'block';
+            document.getElementById('signin-form').style.display = 'none';
+            document.getElementById('contact-info').style.display = 'none';
+            document.getElementById('home-content').style.display = 'none';  // Hide home content
+        });
+
+        // Show Sign In Form when Sign In button is clicked
+        document.getElementById('signin-btn').addEventListener('click', () => {
+            document.getElementById('signin-form').style.display = 'block';
+            document.getElementById('register-form').style.display = 'none';
+            document.getElementById('contact-info').style.display = 'none';
+            document.getElementById('home-content').style.display = 'none';  // Hide home content
+        });
+
+        // Show Contact Info when Contact button is clicked
+        document.getElementById('contact-btn').addEventListener('click', () => {
+            document.getElementById('contact-info').style.display = 'block';
+            document.getElementById('register-form').style.display = 'none';
+            document.getElementById('signin-form').style.display = 'none';
+            document.getElementById('home-content').style.display = 'none';  // Hide home content
+        });
+
+        // Ensure Home section is displayed by default when the page loads
+        window.onload = function () {
+            document.getElementById('home-content').style.display = 'block';
+            document.getElementById('register-form').style.display = 'none';
+            document.getElementById('signin-form').style.display = 'none';
+            document.getElementById('contact-info').style.display = 'none';
+        };
+    </script>
+</body>
+</html>
